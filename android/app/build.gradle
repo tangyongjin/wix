@@ -23,6 +23,18 @@ android {
     buildToolsVersion "25.0.1"
 
 
+    defaultConfig {
+        applicationId "com.example"
+        minSdkVersion 16
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+        ndk {
+            abiFilters "armeabi-v7a", "x86"
+        }
+    }
+
+    
 subprojects {
     afterEvaluate {project ->
         if (project.hasProperty("android")) {
@@ -34,16 +46,7 @@ subprojects {
     }
 }
 
-    defaultConfig {
-        applicationId "com.example"
-        minSdkVersion 16
-        targetSdkVersion 23
-        versionCode 1
-        versionName "1.0"
-        ndk {
-            abiFilters "armeabi-v7a", "x86"
-        }
-    }
+
     splits {
         abi {
             reset()
