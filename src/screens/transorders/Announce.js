@@ -54,11 +54,10 @@ class Announce extends React.Component {
   }
 
 
-  //passProps  会导致 AnnounceStore immutable 
-  //所以要深度拷贝
-
    onPopPressed(){
-     
+       
+       console.log(this.KNAME)
+
        this.props.navigator.push({
           screen: 'DataBridge',
           title: '选择收货地点'
@@ -99,9 +98,9 @@ class Announce extends React.Component {
     
       <View style={styles.row}>
         <FormLabel  labelStyle={styles.FormLabel}   >收货地点</FormLabel>
-       <TouchableWithoutFeedback style={styles.fullWidthButton} onPress={this.onPopPressed.bind(this)}   underlayStyle={{style:'white'}}     >
+       <TouchableWithoutFeedback style={styles.fullWidthButton} ref={(ref) => this.KNAME = "dest_text"} onPress={this.onPopPressed.bind(this)}   underlayStyle={{style:'white'}}     >
          <View  style={{ backgroundColor:"#F5F5F5",paddingTop:15,  borderColor: 'black', borderBottomWidth:1,height:40,marginLeft:20, width:225  }} >
-          <Text  style={{fontSize:16}}>{AnnounceStore.runflag}</Text>
+          <Text  style={{fontSize:16}}>{AnnounceStore.dest_text}</Text>
          </View>
        </TouchableWithoutFeedback>
       </View>
