@@ -13,20 +13,39 @@ const tabs = [{
   icon: require('../img/list.png'),
   title: 'Navigation Types',
 }, {
-  label: 'Actions',
+  label: '运单',
   screen: 'example.Actions',
   icon: require('../img/swap.png'),
-  title: 'Navigation Actions',
+  title: '发布运单',
 }];
 
+
 if (Platform.OS === 'android') {
-  tabs.push({
+  tabs.push(
+  {
     label: 'Transitions',
     screen: 'example.Transitions',
     icon: require('../img/transform.png'),
     title: 'Navigation Transitions',
-  });
+  }
+,
+{
+    label: '扫码',
+    screen: 'eureka.Transorders.Orderscan',
+    icon: require('../img/transform.png'),
+    title: 'Navigation Transitions',
+  }
+
+ 
+
+  );
 }
+
+
+
+
+
+
 
 // this will start our app
 Navigation.startTabBasedApp({
@@ -48,6 +67,7 @@ Navigation.startTabBasedApp({
     navBarBackgroundColor: '#003a66',
     statusBarColor: '#002b4c',
     tabFontFamily: 'BioRhyme-Bold',
+    forceTitlesDisplay: true
   },
   drawer: {
     left: {

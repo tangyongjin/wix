@@ -26,6 +26,19 @@ import CardsInfo from './transitions/sharedElementTransitions/Cards/Info';
 import Masonry from './transitions/sharedElementTransitions/Masonry/Masonry';
 import MasonryItem from './transitions/sharedElementTransitions/Masonry/Item';
 
+ 
+  
+
+// import Transorders  from './transorders/Transorders';
+
+import Orderscan       from './transorders/Orderscan';
+
+import Announce   from './transorders/Announce';
+// import Qrscanner        from './qrcode/Qrscanner';
+// import Transorderdetail        from './transorders/Transorderdetail';
+// import Announce        from './transorders/Announce';
+// import Blank        from './transorders/Blank';
+
 export function registerScreens() {
   Navigation.registerComponent('example.Types', () => Types);
   Navigation.registerComponent('example.Actions', () => Actions);
@@ -51,6 +64,14 @@ export function registerScreens() {
   Navigation.registerComponent('example.Transitions.SharedElementTransitions.Cards.Info', () => CardsInfo);
   Navigation.registerComponent('example.Transitions.SharedElementTransitions.Masonry', () => Masonry);
   Navigation.registerComponent('example.Transitions.SharedElementTransitions.Masonry.Item', () => MasonryItem);
+
+
+  Navigation.registerComponent('eureka.Transorders.Orderscan', () => Orderscan);
+
+  Navigation.registerComponent('eureka.Transorders.Announce', () => Announce);
+
+
+  // Navigation.registerComponent('Qrscanner', () => Qrscanner);
 }
 
 export function registerScreenVisibilityListener() {
