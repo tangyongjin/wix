@@ -14,7 +14,9 @@
     "react": "16.0.0",
     "react-native": "0.51.0",
     "react-native-animatable": "^1.1.0",
-    "react-native-navigation": "latest"
+    "react-native-camera": "^0.12.0",
+    "react-native-navigation": "latest",
+    "react-native-sound": "^0.10.4"
   },
   "devDependencies": {
     "detox": "^5.0.0",

@@ -2,11 +2,15 @@ import React from 'react';
 import {
   View,
   StyleSheet,
+  Animated,
   Text,
   TouchableOpacity,
   Button
 } from 'react-native';
 import {Navigation} from 'react-native-navigation';
+
+import Camera from 'react-native-camera';
+
 
 let navigator;
 const CustomButton = ({text}) =>
@@ -21,6 +25,24 @@ const CustomButton = ({text}) =>
 Navigation.registerComponent('CustomButton', () => CustomButton);
 
 export default class CustomButtonScreen extends React.Component {
+
+   constructor(props) {
+        super(props);
+        
+        this.state = {
+            moveAnim: new Animated.Value(0),
+            Sound:require('react-native-sound'),
+            transorder_url:''
+        };
+        
+        console.log(this.state)
+
+        console.log(this.props)
+
+        this.title = '扫描二维码';
+  }
+
+
   static navigatorButtons = {
     rightButtons: [
       {
@@ -40,7 +62,7 @@ export default class CustomButtonScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Custom right  Button</Text>
+        <Text>Custom right  Button??</Text>
       </View>
     );
   }
