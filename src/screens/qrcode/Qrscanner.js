@@ -26,11 +26,7 @@ class QrCodePage extends Component {
             Sound:require('react-native-sound'),
             transorder_url:''
         };
-        
-        console.log(this.state)
-
-        console.log(this.props)
-
+     
         this.title = '扫描二维码';
     }
 

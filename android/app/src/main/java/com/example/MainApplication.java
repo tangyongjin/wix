@@ -1,31 +1,22 @@
 package com.example;
 
 import android.support.annotation.Nullable;
-
 import com.facebook.react.ReactPackage;
 import com.reactnativenavigation.NavigationApplication;
 
 
 
 
-import com.lwansbrough.RCTCamera.*;
-
+ 
 import com.zmxv.RNSound.RNSoundPackage;
-
 import com.ocetnik.timer.BackgroundTimerPackage;
-
 import cn.jpush.reactnativejpush.JPushPackage;
+ 
+import com.lwansbrough.RCTCamera.RCTCameraPackage;
+// import java.util.List;
+// import java.util.ArrayList;
+import java.util.*;
 
-
-
-import com.zmxv.RNSound.RNSoundPackage;
-
-// import java.util.*;
-
-
-import java.util.List;
-
-import java.util.ArrayList;
 
 public class MainApplication extends NavigationApplication {
     @Override

@@ -7,6 +7,15 @@ import {registerScreens, registerScreenVisibilityListener} from './screens';
 registerScreens();
 registerScreenVisibilityListener();
 
+
+
+global.Geolocation = require('Geolocation'); 
+
+
+
+
+
+
 const tabs = [{
   label: 'Navigation',
   screen: 'example.Types',
