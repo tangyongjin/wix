@@ -11,6 +11,8 @@ registerScreenVisibilityListener();
 
 global.Geolocation = require('Geolocation'); 
 
+import './config/constants'
+import  {  StoreInit } from './mobx/StoreOp'
 
 
 
@@ -23,7 +25,7 @@ const tabs = [{
   title: 'Navigation Types',
 }, {
   label: '运单',
-  screen: 'example.Actions',
+  screen: 'eureka.Transorders.Announce',
   icon: require('../img/swap.png'),
   title: '发布运单',
 }];
