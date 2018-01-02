@@ -57,7 +57,6 @@ class Announce extends React.Component {
    onPopPressed(){
        
        console.log(this.KNAME)
-
        this.props.navigator.push({
           screen: 'DataBridge',
           title: '选择收货地点'

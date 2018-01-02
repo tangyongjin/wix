@@ -26,6 +26,9 @@ project(':react-native-background-timer').projectDir = new File(rootProject.proj
 
 
 
+include ':react-native-vector-icons'
+project(':react-native-vector-icons').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-vector-icons/android')
+
 //极光推送
 
 include ':app', ':jpush-react-native', ':jcore-react-native'
