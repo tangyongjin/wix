@@ -12,7 +12,7 @@ import com.lwansbrough.RCTCamera.*;
 
 import com.zmxv.RNSound.RNSoundPackage;
 
-// import com.ocetnik.timer.BackgroundTimerPackage;
+import com.ocetnik.timer.BackgroundTimerPackage;
 
 // import cn.jpush.reactnativejpush.JPushPackage;
 
@@ -41,7 +41,7 @@ public class MainApplication extends NavigationApplication {
             {
                    add(new RCTCameraPackage());
                    add(new RNSoundPackage());
-                   // add(new BackgroundTimerPackage());
+                   add(new BackgroundTimerPackage());
                    // add(new JPushPackage(SHUTDOWN_TOAST, SHUTDOWN_LOG));
 
 

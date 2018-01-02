@@ -34,7 +34,7 @@ android {
         }
     }
 
-    
+
 subprojects {
     afterEvaluate {project ->
         if (project.hasProperty("android")) {
@@ -82,7 +82,6 @@ dependencies {
     compile project(':react-native-navigation')
     compile project(':react-native-camera')
     compile project(':react-native-sound')
-
-
+    compile project(':react-native-background-timer')
 
 }
