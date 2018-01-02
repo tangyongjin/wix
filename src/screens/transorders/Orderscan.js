@@ -13,13 +13,6 @@ import {Navigation} from 'react-native-navigation';
 import Transorderdetail from './Transorderdetail'
 import {Icon,Divider,  FormLabel,FormInput } from 'react-native-elements';
  
-// import JPushModule from 'jpush-react-native';
-
-
-
- 
-
-
 const RightCustomButton = ({text}) =>
   <TouchableOpacity
     style={[styles.buttonContainer]}
@@ -65,13 +58,8 @@ const RightCustomButton = ({text}) =>
  
 
   onNavigatorEvent(event) {
-     
-
-      console.log('%c onNavigatorEvent event', 'background: #222; color: #bada55');
-      console.log(event)
 
      if(event.link==='qrscan'){
-     
        this.props.navigator.push({
           screen: 'Qrscanner',
           title: '扫描',
@@ -87,13 +75,6 @@ const RightCustomButton = ({text}) =>
   }
   
   
-   componentDidMount() {
-          
-  }
-
-
-  
-
   getLocation() {
 
       
@@ -138,20 +119,10 @@ const RightCustomButton = ({text}) =>
  render() {
     return (
       <View style={styles.container}>
-         
-         <Icon
-            raised
-            name='heartbeat'
-            type='font-awesome'
-            color='#f50' 
-            size={40}
-            onPress={this.getLocation }
-         />
         <Text>
             订单详情:
             {this.state.passedData } 
         </Text> 
-         
           <Transorderdetail   unamx={'alex'}  transorder_serial={this.state.passedData }  ></Transorderdetail>
       </View>
     );
@@ -186,9 +157,9 @@ const styles = StyleSheet.create({
 
   button: {
     backgroundColor: 'tomato',
-    width: 34,
-    height: 34,
-    borderRadius: 34 / 2,
+    width: 32,
+    height: 32,
+    borderRadius: 32 / 2,
     overflow: 'hidden',
     justifyContent: 'center',
     alignItems: 'center'

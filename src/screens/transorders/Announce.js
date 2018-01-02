@@ -149,7 +149,12 @@ class Announce extends React.Component {
 
        </View>
 
-    <Button onPress={this._onPress.bind(this)} title="bad_bind" color="blue" accessibilityLabel="Tap on Me"/>
+
+        <View style={styles.button}>
+          <Button
+            onPress={this.onPushToFirstTab}
+            title="        保存       "/>
+        </View>
     </ScrollView>
     );
 
@@ -187,7 +192,7 @@ class Announce extends React.Component {
   button: {
     alignItems: 'center',
     backgroundColor: 'white',
-    padding: 10
+    padding: 10,
   },
  
    fullWidthButton: {

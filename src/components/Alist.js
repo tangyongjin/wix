@@ -16,6 +16,9 @@ import {
   Alert
 } from 'react-native';
 
+import {Icon,Divider,  FormLabel,FormInput } from 'react-native-elements';
+
+
   class   Alist extends React.Component
 {
 
@@ -142,27 +145,59 @@ import {
     return ( 
            <ScrollView style={styles.container}>
              <View style={{flex: 1}}>
-            <View style={{marginTop: 10, backgroundColor: 'white'}}>
-              <Text style={{padding: 20, fontWeight:'bold'}}>选择</Text>
+            <View  style={{marginTop: 10, backgroundColor: 'white'}}>
+
+
+            <View style={{flexDirection:'row',justifyContent : 'space-between'}}  >
+                          <Text style={{padding: 16, fontSize:16,fontWeight:'bold'}}>选择</Text>
+                           <Icon
+                              style={{flex:0}}
+                              raised
+                              name='plus'
+                              type='font-awesome'
+                              color='#f50' 
+                              size={15}
+                              onPress={this.getLocation }
+                           />
+
+
+
+            </View>
+
 
               <View style={{
                 backgroundColor: '#eeeeee',
                 paddingTop: 5,
                 paddingBottom: 5,
               }}>
+
+
+               <View style={{flexDirection:'row'}}  >
                 <Text style={{
                   color: '#555555',
-                  paddingLeft: 20,
+                  paddingLeft: 16,
                   marginBottom: 5,
-                  marginTop: 5,
-                  fontSize: 14,
+                  marginTop: 12,
+                  fontSize: 15,
                 }}>列表</Text>
 
+                <Icon
+                              style={{flex:0}}
+                              raised
+                              name='download'
+                              type='font-awesome'
+                              color='#550' 
+                              size={12}
+                              onPress={this.getLocation }
+                           />
+                </View>
                  { this.props.cfgdata.map((item) =>  this.renderOneRow( item.value, false, null, item.key) ) }
 
               </View>
               <Text style={{
-                margin: 20,
+                marginTop:10,
+                marginLeft:22,
+
               }}>
               
                当前选择:{this.state.selectedOption}
