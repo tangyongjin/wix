@@ -1,10 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, ScrollView, View, TouchableWithoutFeedback } from 'react-native';
-// import { RadioButtons } from 'react-native-radio-buttons';
-
-
+import DeepClone from 'lodash';
 import { Plainlist } from './Plainlist';
-  
 import  Alist from './Alist';
 
 
@@ -21,6 +18,12 @@ let listoptions =
 
 export default class DataBridge extends React.Component {
 
+  constructor(props){
+    super(props);
+      
+  }
+ 
+
   componentWillMount() {
     navigator = this.props.navigator;
   }
@@ -29,9 +32,10 @@ export default class DataBridge extends React.Component {
    
 
   render() {
+    
     return (
       <ScrollView style={styles.container}>
-        <Alist cfgdata={listoptions} />
+        <Alist  cfgdata={listoptions} />
       </ScrollView>
     );
   }

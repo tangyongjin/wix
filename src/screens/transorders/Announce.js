@@ -20,7 +20,16 @@ import {observable, autorun,computed} from 'mobx';
  
 import { observer } from 'mobx-react';
 
+import DeepClone from 'lodash';
+
+// import AnnounceStore from '../../mobx/AnnounceStore'
+
+
+
+
+
 @observer
+
 class Announce extends React.Component {
 
   constructor(props) {
@@ -37,24 +46,30 @@ class Announce extends React.Component {
 
   componentDidMount() {
     ConfigStore.setFoo();
+
+        // this.props.ds.set22('outside')
+
+
+
   }
 
 
+  //passProps  会导致 AnnounceStore immutable 
+  //所以要深度拷贝
+
    onPopPressed(){
-       console.log(this.props);
-       this.props.navigator.showModal({
+     
+       this.props.navigator.push({
           screen: 'DataBridge',
           title: '选择收货地点'
        });
-
-  
   }
 
 
   
 
  _onPress = () => {
-    
+
 };
 
  
@@ -86,7 +101,7 @@ class Announce extends React.Component {
         <FormLabel  labelStyle={styles.FormLabel}   >收货地点</FormLabel>
        <TouchableWithoutFeedback style={styles.fullWidthButton} onPress={this.onPopPressed.bind(this)}   underlayStyle={{style:'white'}}     >
          <View  style={{ backgroundColor:"#F5F5F5",paddingTop:15,  borderColor: 'black', borderBottomWidth:1,height:40,marginLeft:20, width:225  }} >
-          <Text  style={{fontSize:16}}>{ConfigStore.foo}</Text>
+          <Text  style={{fontSize:16}}>{AnnounceStore.runflag}</Text>
          </View>
        </TouchableWithoutFeedback>
       </View>

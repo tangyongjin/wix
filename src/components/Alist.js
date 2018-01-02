@@ -19,66 +19,18 @@ import {
   class   Alist extends React.Component
 {
 
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
+    
+    console.log(this.props)
+
     this.state = {
       selectedOption: null,
       selectedIndex: -1,
     };
 
   }
- 
- 
-   // renderOnerow( option, selected, onSelect, index) {
-    
-
-   //    const textStyle = {
-   //      paddingTop: 10,
-   //      paddingBottom: 10,
-   //      color: 'black',
-   //      flex: 1,
-   //      fontSize: 14,
-   //    };
-   //    const baseStyle = {
-   //      flexDirection: 'row',
-   //    };
-   //    var style;
-   //    var checkMark;
-
-   //    if (index > 0) {
-   //      style = [baseStyle, {
-   //        borderTopColor: '#eeeeee',
-   //        borderTopWidth: 1,
-   //      }];
-   //    } else {
-   //      style = baseStyle;
-   //    }
-
-   //    if (selected) {
-   //      checkMark = <Text style={{
-   //        flex: 0.1,
-   //        color: '#007AFF',
-   //        fontWeight: 'bold',
-   //        paddingTop: 8,
-   //        fontSize: 20,
-   //        alignSelf: 'center',
-   //      }}>✓</Text>;
-   //    }
-
-   //    return (
-   //      <TouchableWithoutFeedback  key={index}>
-   //        <View style={style}>
-   //          <Text style={textStyle}>{option}</Text>
-   //          {checkMark}
-   //        </View>
-   //      </TouchableWithoutFeedback>
-   //    );
-   //  }
-
-
-
- 
-
+  
     renderOneRow( option, selected, onSelect, index) {
 
       const textStyle = {
@@ -154,7 +106,9 @@ import {
     //取消选择 
 
 
-     ConfigStore.setFoo2(option);
+     AnnounceStore.set22(option)
+
+   
     if( this.state.selectedIndex ==index){
 
         ConfigStore.Configs.hello=option
