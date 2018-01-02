@@ -8,19 +8,20 @@ class sysstroe {
      this.Configs[item]=value
   }
 
+   @observable foo: string;
+
+    setFoo() {
+        this.foo = 'test';
+    }
+
+   setFoo2(v) {
+        this.foo = v;
+    }
+
+
   @action setItem(item, value) {
      this.Configs[item]=value
   }
-
-
-
-
-
-
-
-
-
-
 }
 
 

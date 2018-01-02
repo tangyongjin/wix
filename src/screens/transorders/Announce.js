@@ -35,6 +35,11 @@ class Announce extends React.Component {
   }
 
 
+  componentDidMount() {
+    ConfigStore.setFoo();
+  }
+
+
    onPopPressed(){
        console.log(this.props);
        this.props.navigator.showModal({
@@ -45,26 +50,21 @@ class Announce extends React.Component {
   
   }
 
- // @observable city =  "BJ"
 
- 
- @observable city = ConfigStore.Configs.hello;
+  
 
- 
  _onPress = () => {
-    this.city='arrow'
-    console.log(this.city)
-    Alert.alert('change()city!'+this.city);
     
 };
 
  
  render() {
     return (
+
       <ScrollView style={styles.container}>
 
-      <Text  style={{fontSize:16}}>{this.city}</Text>
- 
+     
+
       <View style={styles.row}>
         <FormLabel  labelStyle={styles.FormLabel}   >运输计划号</FormLabel>
 
@@ -86,7 +86,7 @@ class Announce extends React.Component {
         <FormLabel  labelStyle={styles.FormLabel}   >收货地点</FormLabel>
        <TouchableWithoutFeedback style={styles.fullWidthButton} onPress={this.onPopPressed.bind(this)}   underlayStyle={{style:'white'}}     >
          <View  style={{ backgroundColor:"#F5F5F5",paddingTop:15,  borderColor: 'black', borderBottomWidth:1,height:40,marginLeft:20, width:225  }} >
-          <Text  style={{fontSize:16}}>{this.city}</Text>
+          <Text  style={{fontSize:16}}>{ConfigStore.foo}</Text>
          </View>
        </TouchableWithoutFeedback>
       </View>

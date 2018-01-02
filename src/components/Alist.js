@@ -29,51 +29,51 @@ import {
   }
  
  
-   renderOnerow( option, selected, onSelect, index) {
+   // renderOnerow( option, selected, onSelect, index) {
     
 
-      const textStyle = {
-        paddingTop: 10,
-        paddingBottom: 10,
-        color: 'black',
-        flex: 1,
-        fontSize: 14,
-      };
-      const baseStyle = {
-        flexDirection: 'row',
-      };
-      var style;
-      var checkMark;
+   //    const textStyle = {
+   //      paddingTop: 10,
+   //      paddingBottom: 10,
+   //      color: 'black',
+   //      flex: 1,
+   //      fontSize: 14,
+   //    };
+   //    const baseStyle = {
+   //      flexDirection: 'row',
+   //    };
+   //    var style;
+   //    var checkMark;
 
-      if (index > 0) {
-        style = [baseStyle, {
-          borderTopColor: '#eeeeee',
-          borderTopWidth: 1,
-        }];
-      } else {
-        style = baseStyle;
-      }
+   //    if (index > 0) {
+   //      style = [baseStyle, {
+   //        borderTopColor: '#eeeeee',
+   //        borderTopWidth: 1,
+   //      }];
+   //    } else {
+   //      style = baseStyle;
+   //    }
 
-      if (selected) {
-        checkMark = <Text style={{
-          flex: 0.1,
-          color: '#007AFF',
-          fontWeight: 'bold',
-          paddingTop: 8,
-          fontSize: 20,
-          alignSelf: 'center',
-        }}>✓</Text>;
-      }
+   //    if (selected) {
+   //      checkMark = <Text style={{
+   //        flex: 0.1,
+   //        color: '#007AFF',
+   //        fontWeight: 'bold',
+   //        paddingTop: 8,
+   //        fontSize: 20,
+   //        alignSelf: 'center',
+   //      }}>✓</Text>;
+   //    }
 
-      return (
-        <TouchableWithoutFeedback  key={index}>
-          <View style={style}>
-            <Text style={textStyle}>{option}</Text>
-            {checkMark}
-          </View>
-        </TouchableWithoutFeedback>
-      );
-    }
+   //    return (
+   //      <TouchableWithoutFeedback  key={index}>
+   //        <View style={style}>
+   //          <Text style={textStyle}>{option}</Text>
+   //          {checkMark}
+   //        </View>
+   //      </TouchableWithoutFeedback>
+   //    );
+   //  }
 
 
 
@@ -152,6 +152,9 @@ import {
   selectOne(index,option){
  
     //取消选择 
+
+
+     ConfigStore.setFoo2(option);
     if( this.state.selectedIndex ==index){
 
         ConfigStore.Configs.hello=option
