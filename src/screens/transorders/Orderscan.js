@@ -20,17 +20,17 @@ import {Icon,Divider,  FormLabel,FormInput } from 'react-native-elements';
  
 
 
-// const RightCustomButton = ({text}) =>
-//   <TouchableOpacity
-//     style={[styles.buttonContainer]}
-//     onPress={()=>Navigation.handleDeepLink({link:"qrscan"})}
-//   >
-//     <View style={styles.button}>
-//       <Text style={{ color: 'white' }}>{text}</Text>
-//     </View>
-//   </TouchableOpacity>;
+const RightCustomButton = ({text}) =>
+  <TouchableOpacity
+    style={[styles.buttonContainer]}
+    onPress={()=>Navigation.handleDeepLink({link:"qrscan"})}
+  >
+    <View style={styles.button}>
+      <Text style={{ color: 'white' }}>{text}</Text>
+    </View>
+  </TouchableOpacity>;
 
-  // Navigation.registerComponent('CustomButton', () => RightCustomButton);
+  Navigation.registerComponent('CustomButton', () => RightCustomButton);
 
   class Orderscan extends React.Component {
 

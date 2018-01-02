@@ -12,24 +12,10 @@ import {
     TouchableOpacity
 } from 'react-native';
 
-import Camera from 'react-native-camera';
  
-// var Sound = require('react-native-sound');
-           
-
-
-const RightCustomButton = ({text}) =>
-  <TouchableOpacity
-    style={[styles.buttonContainer]}
-    onPress={()=>Navigation.handleDeepLink({link:"qrscan"})}
-  >
-    <View style={styles.button}>
-      <Text style={{ color: 'white' }}>{text}</Text>
-    </View>
-  </TouchableOpacity>;
-
-  Navigation.registerComponent('CustomButton', () => RightCustomButton);
-
+import Camera from 'react-native-camera';
+  
+            
 
 class QrCodePage extends Component {
 

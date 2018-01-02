@@ -34,7 +34,7 @@ import MasonryItem from './transitions/sharedElementTransitions/Masonry/Item';
 import Orderscan       from './transorders/Orderscan';
 
 import Announce   from './transorders/Announce';
-// import Qrscanner        from './qrcode/Qrscanner';
+import Qrscanner        from './qrcode/Qrscanner';
 // import Transorderdetail        from './transorders/Transorderdetail';
 // import Announce        from './transorders/Announce';
 // import Blank        from './transorders/Blank';
@@ -71,7 +71,7 @@ export function registerScreens() {
   Navigation.registerComponent('eureka.Transorders.Announce', () => Announce);
 
 
-  // Navigation.registerComponent('Qrscanner', () => Qrscanner);
+  Navigation.registerComponent('Qrscanner', () => Qrscanner);
 }
 
 export function registerScreenVisibilityListener() {
