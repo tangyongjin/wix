@@ -4,13 +4,7 @@ import DeepClone from 'lodash';
 import { Plainlist } from './Plainlist';
 import  Alist from './Alist';
 
-
  
-
-
-
-//{dskey:'destlist',field:'dest_text'}
-
 export default class DataBridge extends React.Component {
 
   constructor(props){
@@ -29,13 +23,10 @@ export default class DataBridge extends React.Component {
 
   render() {
     let listoptions =ConfigStore.Configs[this.props.dskey] 
-    console.log(ConfigStore)
-    
-    console.log(listoptions)
     
     return (
       <ScrollView style={styles.container}>
-        <Alist  field_text={this.props.field_text}  field_id={this.props.field_id}   cfgdata={listoptions} />
+        <Alist  field_text={this.props.field_text} dbfield={this.props.dbfield}  field_id={this.props.field_id}   cfgdata={listoptions} />
       </ScrollView>
     );
   }

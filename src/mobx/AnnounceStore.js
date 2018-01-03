@@ -45,29 +45,17 @@ constructor(){
   }
 
   
-   @observable runflag:'';
-
-    setFoo() {
-        this.runflag = 'test';
-    }
-
-    setFoo2(v) {
-        this.runflag = v;
-    }
  
   
-   @action setkv(key, value) {
-        this.announceDS[key]=value
-   }
-
     
   @action get22(item) {
     return  this.announceDS[item]
   }
 
 
-  @action set22(key, value) {
+  @action setkv(key, value) {
               this.announceDS[key] = value;
+             
   }
 
 

@@ -31,6 +31,7 @@ class Announce extends React.Component {
         this.state = {
             passedData:null
         };
+         this.onPopPressed = this.onPopPressed.bind(this)
   }
 
   componentWillMount() {
@@ -46,18 +47,22 @@ class Announce extends React.Component {
 
 
   }
+ 
 
  
- onPopPressed = () => {
+ onPopPressed (cfg) {
        
-       console.log(this.in_out_cfg)
+     
+       // console.log(cfg);
+      console.log(cfg)
         
        this.props.navigator.push({
           screen: 'DataBridge',
           title: '选择收货地点',
-          passProps:this.in_out_cfg
+          passProps:cfg
        });
   }
+
 
 
   
@@ -93,27 +98,34 @@ class Announce extends React.Component {
         </View>
       </View>
 
-    
-      <View style={styles.row}>
+      
+   
+
+       <View style={styles.row}>
         <FormLabel  labelStyle={styles.FormLabel}   >收货地点</FormLabel>
-       <TouchableWithoutFeedback style={styles.fullWidthButton} ref={(ref) => this.in_out_cfg = {dskey:'destlist',field_text:'dest_text',field_id:'dest_id'} } 
-         
-         onPress={this.onPopPressed}
+       <TouchableWithoutFeedback style={styles.fullWidthButton} 
+       onPress={() => this.onPopPressed({dskey:'destlist',dbfield:'destname',field_text:'dest_text',field_id:'dest_id'})}
 
          underlayStyle={{style:'white'}}>
          <View  style={{ backgroundColor:"#F5F5F5",paddingTop:15,  borderColor: 'black', borderBottomWidth:1,height:40,marginLeft:20, width:225  }} >
-          <Text  style={{fontSize:16}}>{AnnounceStore.dest_text}</Text>
+          <Text  style={{fontSize:16}}>{AnnounceStore.announceDS.dest_text}</Text>
          </View>
+
        </TouchableWithoutFeedback>
       </View>
 
 
-      <View style={styles.row}>
+       <View style={styles.row}>
         <FormLabel  labelStyle={styles.FormLabel}   >货品名称</FormLabel>
-        <View style={styles.inputWrap}>
-         <FormInput  inputStyle={styles.inputcvv}  underlineColorAndroid="#100F0E"   selectionColor="rgba(0,0,0,0.4)"   onChangeText={ (text)=> this.setState({email: text})} />
-        </View>
-      </View>
+       <TouchableWithoutFeedback style={styles.fullWidthButton} 
+         onPress={() => this.onPopPressed({dskey:'goodslist',dbfield:'goodsname',field_text:'goods_text',field_id:'goods_id'})}
+         underlayStyle={{style:'white'}}>
+         <View  style={{ backgroundColor:"#F5F5F5",paddingTop:15,  borderColor: 'black', borderBottomWidth:1,height:40,marginLeft:20, width:225  }} >
+          <Text  style={{fontSize:16}}>{AnnounceStore.announceDS.goods_text}</Text>
+         </View>
+       </TouchableWithoutFeedback>
+      </View> 
+       
 
  
       <View style={styles.row}>

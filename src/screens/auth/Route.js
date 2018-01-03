@@ -39,6 +39,12 @@ const tabs_after_login = [{
     screen: 'eureka.Transorders.Orderscan',
     icon: require('../../../img/transform.png'),
     title: '订单扫码',
+  },
+  {
+  label: 'Login',
+  screen: 'Login',
+  icon: require('../../../img/swap.png'),
+  title: 'Login',
   }
   );
  

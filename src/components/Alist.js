@@ -22,17 +22,16 @@ import {Icon,Divider,  FormLabel,FormInput } from 'react-native-elements';
   class   Alist extends React.Component
 {
 
-  constructor(props){
+   constructor(props){
+   
     super(props);
-    
     console.log(this.props)
-
     this.state = {
       selectedOption: null,
       selectedIndex: -1,
     };
 
-  }
+   }
   
     renderOneRow( option, selected, onSelect, index) {
 
@@ -104,13 +103,18 @@ import {Icon,Divider,  FormLabel,FormInput } from 'react-native-elements';
   }
 
 
+  func1(){
+
+
+  }
+  
   selectOne(index,option){
  
     //取消选择 
 
- 
-     AnnounceStore.set22(this.props.field_id,index)
-     AnnounceStore.set22(this.props.field_text,option)
+    
+     AnnounceStore.setkv(this.props.field_id,index)
+     AnnounceStore.setkv(this.props.field_text,option)
 
 
    
@@ -134,7 +138,10 @@ import {Icon,Divider,  FormLabel,FormInput } from 'react-native-elements';
   }
 
   render() {
-    
+
+    console.log ("============================>");
+    console.log(this.props);
+
     return ( 
            <ScrollView style={styles.container}>
              <View style={{flex: 1}}>
@@ -150,7 +157,7 @@ import {Icon,Divider,  FormLabel,FormInput } from 'react-native-elements';
                               type='font-awesome'
                               color='#f50' 
                               size={15}
-                              onPress={this.getLocation }
+                              onPress={this.func1 }
                            />
 
 
@@ -181,10 +188,10 @@ import {Icon,Divider,  FormLabel,FormInput } from 'react-native-elements';
                               type='font-awesome'
                               color='#550' 
                               size={12}
-                              onPress={this.getLocation }
+                              onPress={this.func1 }
                            />
-                </View>
-                 { this.props.cfgdata.map((item) =>  this.renderOneRow( item.destname, false, null, item.pid) ) }
+                </View> 
+                 { this.props.cfgdata.map((item) =>  this.renderOneRow( item[this.props.dbfield], false, null, item.pid) ) }
 
               </View>
               <Text style={{

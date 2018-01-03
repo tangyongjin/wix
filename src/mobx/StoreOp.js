@@ -2,9 +2,9 @@
 export function StoreInit(res) {
 
   console.log('StoreInit')
-  ConfigStore.addItem('destlist',res.destlist)              
- 
-   
+  ConfigStore.addItem('destlist',res.destlist)      
+  ConfigStore.addItem('goodslist',res.goodslist)      
+  
 
 }
 
