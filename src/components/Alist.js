@@ -108,17 +108,15 @@ import {Icon,Divider,  FormLabel,FormInput } from 'react-native-elements';
  
     //取消选择 
 
+ 
+     AnnounceStore.set22(this.props.field_id,index)
+     AnnounceStore.set22(this.props.field_text,option)
 
-     AnnounceStore.set22(option)
 
    
     if( this.state.selectedIndex ==index){
 
-        ConfigStore.Configs.hello=option
-        // ConfigStore.Configs.announce.dest_id=-1;
-        // ConfigStore.Configs.announce.dest_text=null;
-
-
+        
        this.setState({
            selectedOption: null,
            selectedIndex: -1
@@ -131,11 +129,6 @@ import {Icon,Divider,  FormLabel,FormInput } from 'react-native-elements';
            selectedOption: option,
            selectedIndex: index
           });
-     
-     ConfigStore.Configs.hello=option
-     // ConfigStore.Configs.announce.dest_id=index;
-     // ConfigStore.Configs.announce.dest_text=option;
-
     }
  
   }
@@ -191,7 +184,7 @@ import {Icon,Divider,  FormLabel,FormInput } from 'react-native-elements';
                               onPress={this.getLocation }
                            />
                 </View>
-                 { this.props.cfgdata.map((item) =>  this.renderOneRow( item.value, false, null, item.key) ) }
+                 { this.props.cfgdata.map((item) =>  this.renderOneRow( item.destname, false, null, item.pid) ) }
 
               </View>
               <Text style={{

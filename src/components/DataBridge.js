@@ -5,21 +5,17 @@ import { Plainlist } from './Plainlist';
 import  Alist from './Alist';
 
 
-let listoptions = 
-     [
-       {key:1,value:'American'},
-       {key:2,value:'Australian'},
-       {key:3,value:'xAustralian'},
-       {key:4,value:'1xAustralian'},
-       {key:5,value:'34xAustralian'} 
  
-     ];
 
+
+
+//{dskey:'destlist',field:'dest_text'}
 
 export default class DataBridge extends React.Component {
 
   constructor(props){
     super(props);
+    console.log(this.props)
       
   }
  
@@ -32,10 +28,14 @@ export default class DataBridge extends React.Component {
    
 
   render() {
+    let listoptions =ConfigStore.Configs[this.props.dskey] 
+    console.log(ConfigStore)
+    
+    console.log(listoptions)
     
     return (
       <ScrollView style={styles.container}>
-        <Alist  cfgdata={listoptions} />
+        <Alist  field_text={this.props.field_text}  field_id={this.props.field_id}   cfgdata={listoptions} />
       </ScrollView>
     );
   }

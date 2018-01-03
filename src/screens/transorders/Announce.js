@@ -20,8 +20,7 @@ import {observable, autorun,computed} from 'mobx';
  
 import { observer } from 'mobx-react';
 
-import DeepClone from 'lodash';
-
+ 
 
 @observer
 
@@ -48,13 +47,15 @@ class Announce extends React.Component {
 
   }
 
-
-   onPopPressed(){
+ 
+ onPopPressed = () => {
        
-       console.log(this.KNAME)
+       console.log(this.in_out_cfg)
+        
        this.props.navigator.push({
           screen: 'DataBridge',
-          title: '选择收货地点'
+          title: '选择收货地点',
+          passProps:this.in_out_cfg
        });
   }
 
@@ -63,6 +64,7 @@ class Announce extends React.Component {
 
  _onPressSave = () => {
 
+  console.log(AnnounceStore)
   console.log(ConfigStore)
 
 }
@@ -94,7 +96,11 @@ class Announce extends React.Component {
     
       <View style={styles.row}>
         <FormLabel  labelStyle={styles.FormLabel}   >收货地点</FormLabel>
-       <TouchableWithoutFeedback style={styles.fullWidthButton} ref={(ref) => this.KNAME = "dest_text"} onPress={this.onPopPressed.bind(this)}   underlayStyle={{style:'white'}}     >
+       <TouchableWithoutFeedback style={styles.fullWidthButton} ref={(ref) => this.in_out_cfg = {dskey:'destlist',field_text:'dest_text',field_id:'dest_id'} } 
+         
+         onPress={this.onPopPressed}
+
+         underlayStyle={{style:'white'}}>
          <View  style={{ backgroundColor:"#F5F5F5",paddingTop:15,  borderColor: 'black', borderBottomWidth:1,height:40,marginLeft:20, width:225  }} >
           <Text  style={{fontSize:16}}>{AnnounceStore.dest_text}</Text>
          </View>

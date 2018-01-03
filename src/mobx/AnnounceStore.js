@@ -66,8 +66,8 @@ constructor(){
   }
 
 
-  @action set22( value) {
-              this.runflag = value;
+  @action set22(key, value) {
+              this.announceDS[key] = value;
   }
 
 
