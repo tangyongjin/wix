@@ -21,7 +21,7 @@ import {observable, autorun,computed} from 'mobx';
  
 import { observer } from 'mobx-react';
 import DatePicker from 'react-native-datepicker'
-
+ 
  
 
 @observer
@@ -35,21 +35,18 @@ class Announce extends React.Component {
         };
          this.onPopPressed = this.onPopPressed.bind(this)
          this.onSingleItem = this.onSingleItem.bind(this)
-          
-
   }
+
 
   componentWillMount() {
     navigator = this.props.navigator;
   }
 
- 
  onSingleItem (value,key) {
        console.log(value,key)
        AnnounceStore.setkv( key,value)
   }
 
- 
   onPopPressed (cfg) {
        this.props.navigator.push({
           screen: 'DataBridge',
@@ -59,15 +56,45 @@ class Announce extends React.Component {
   }
 
 
+ 
 
+async saveAnnounce(){
+ try {
+      let response = await fetch(API_ROOT+ 'transorder/saveAnnounce', {
+                              method: 'POST',
+                              body: JSON.stringify(AnnounceStore)
+                            });
+      
+      if (response.status == 200 ) {
+          let res = await response.json();
+          let retcode=res.code;
+          Alert.alert(res.msg)
+      } else {
+          let error = response.status;
+          throw error;
+      }
+    } catch(error) {
+    }
+}
   
 
  _onPressSave = () => {
-   console.log(AnnounceStore)
+  Alert.alert(
+  '确认',
+  '发布信息?',
+  [
+    
+    {text: '取消' , style: 'cancel'},
+    {text: '确定', onPress:this.saveAnnounce  },
+  ],
+  { cancelable: true}
+ )
 }
 
  
  render() {
+   
+    const {showAlert} = this.state;
     return (
 
       <ScrollView style={styles.container}>
@@ -131,7 +158,7 @@ class Announce extends React.Component {
       <View style={styles.row}>
         <FormLabel  labelStyle={styles.FormLabel}   >发车时间</FormLabel>
          <DatePicker
-        style={{width: 200}}
+        style={{width: 255}}
         date={AnnounceStore.announceDS.delver_datetime}
         mode="date"
         placeholder="select date"
@@ -143,12 +170,15 @@ class Announce extends React.Component {
         customStyles={{
           dateIcon: {
             position: 'absolute',
+            width: 0,
+            height:0,
             left: 0,
             top: 4,
             marginLeft: 0
           },
+
           dateInput: {
-            marginLeft: 36
+            marginLeft: 20
           }
           // ... You can check the source to find the other keys.
         }}
@@ -188,6 +218,11 @@ class Announce extends React.Component {
         <View style={styles.button}>
           <Button onPress={this._onPressSave} title="        保存       " />
         </View>
+
+        
+ 
+
+
     </ScrollView>
     );
 
@@ -198,6 +233,7 @@ class Announce extends React.Component {
  export default   Announce
 
 
+
  const styles = StyleSheet.create({
   row: {
     flex: 0,
@@ -205,7 +241,7 @@ class Announce extends React.Component {
     height:45,
     marginLeft:5,
     marginRight:5,
-    marginTop:10,
+    marginTop:0,
     
   },
 

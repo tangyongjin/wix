@@ -28,9 +28,6 @@ class Login extends Component {
 
   constructor(props) {
     super(props);
-    
-    console.log(this.props)
-     
     this.state = {
       email: "",
       password: "",
@@ -38,7 +35,6 @@ class Login extends Component {
       callback:'',
       showProgress: false,
     };
-
     this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent.bind(this));
   }
 
