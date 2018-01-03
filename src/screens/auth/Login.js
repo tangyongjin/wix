@@ -1,6 +1,3 @@
- 
- 
-
 import React, {Component} from 'react';
 import {
   StyleSheet, 
@@ -15,25 +12,10 @@ import {
 
 
 import {Navigation, ScreenVisibilityListener} from 'react-native-navigation';
-
-
 import {Icon,Divider, Button,FormLabel,FormInput } from 'react-native-elements';
- 
-
-import {registerScreens, registerScreenVisibilityListener} from '../Route';
-
-import Camera from 'react-native-camera';
-
 import * as AppConstClass from '../../config/constants';
-
 import Profile  from '../profile/Profile';
-
-
-import {Separator} from 'react-native-form-generator';
-
 import  {  StoreInit } from '../../mobx/StoreOp'
-
-
 
 
 const ACCESS_TOKEN = AppConstClass.ACCESS_TOKEN;
@@ -160,19 +142,10 @@ class Login extends Component {
   render() {
      return (
       <View style={styles.container}>
-
-      
-      
-
         <FormLabel  labelStyle={styles.FormLabel}   >手机号</FormLabel>
         <FormInput  inputStyle={styles.FormInput}  underlineColorAndroid="#223344"   selectionColor="rgba(0,0,0,0.4)"   onChangeText={ (text)=> this.setState({email: text})} />
-        
-        <Separator />
-
         <FormLabel>密码</FormLabel>
-
         <FormInput    underlineColorAndroid="#223344"   selectionColor="rgba(0,0,0,0.4)"   onChangeText={ (text)=> this.setState({password: text}) } />
-        
         <Button
           raised
           icon={{name: 'home', size: 16}}
@@ -181,10 +154,6 @@ class Login extends Component {
           textStyle={{textAlign: 'center'}}
           title={`Login888`}
         />
-
-         
-  
-    
       </View>
     );
   }

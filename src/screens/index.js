@@ -29,20 +29,22 @@ import MasonryItem from './transitions/sharedElementTransitions/Masonry/Item';
  
   
 
-// import Transorders  from './transorders/Transorders';
 
 import Orderscan       from './transorders/Orderscan';
-
 import Announce   from './transorders/Announce';
 import Qrscanner        from './qrcode/Qrscanner';
-
-
 import DataBridge        from '../components/DataBridge';
+
+
 
 
 // import Transorderdetail        from './transorders/Transorderdetail';
 // import Announce        from './transorders/Announce';
-// import Blank        from './transorders/Blank';
+
+import Login        from './auth/Login';
+import Profile        from './profile/Profile';
+
+
 
 export function registerScreens() {
   Navigation.registerComponent('example.Types', () => Types);
@@ -77,6 +79,12 @@ export function registerScreens() {
 
   Navigation.registerComponent('DataBridge', () => DataBridge);
   Navigation.registerComponent('Qrscanner', () => Qrscanner);
+  Navigation.registerComponent('Login', () => Login);
+  Navigation.registerComponent('Profile', () => Profile);
+
+
+
+
 }
 
 export function registerScreenVisibilityListener() {

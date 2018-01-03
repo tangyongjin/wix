@@ -22,11 +22,6 @@ import { observer } from 'mobx-react';
 
 import DeepClone from 'lodash';
 
-// import AnnounceStore from '../../mobx/AnnounceStore'
-
-
-
-
 
 @observer
 
@@ -66,7 +61,7 @@ class Announce extends React.Component {
 
   
 
- _onPress = () => {
+ _onPressSave = () => {
 
 };
 
@@ -151,9 +146,7 @@ class Announce extends React.Component {
 
 
         <View style={styles.button}>
-          <Button
-            onPress={this.onPushToFirstTab}
-            title="        保存       "/>
+          <Button onPress={this._onPressSave} title="        保存       " />
         </View>
     </ScrollView>
     );
