@@ -1,19 +1,19 @@
 import React from 'react';
- 
-
 import   {
   Component,
   ScrollView,Button,
   StyleSheet,
   TouchableHighlight,
   AsyncStorage,
+  Platform,
   Text,
   View
 } from 'react-native';
 
-
+import {Navigation} from 'react-native-navigation';
 import * as AppConstClass from '../../config/constants';
- 
+
+import {before_login ,after_login } from  '../auth/Route' 
 
 const ACCESS_TOKEN = AppConstClass.ACCESS_TOKEN;
 
@@ -34,7 +34,6 @@ class Profile extends React.Component {
   async deleteToken() {
     try {
         await AsyncStorage.removeItem(ACCESS_TOKEN)
-        // this.redirect('root');
     } catch(error) {
         console.log("Something went wrong");
     }
@@ -50,7 +49,9 @@ class Profile extends React.Component {
 
 
       
-
+restartApp(){
+  before_login()
+}
     
 
 render() {
@@ -58,7 +59,7 @@ render() {
        <View style={styles.container}>
         <Text style={styles.title}>Profile </Text>
         <View style={styles.button}>
-          <Button onPress= { this.onLogout.bind(this) }   title="        退出       " />
+          <Button onPress= { this.restartApp.bind(this) }   title="        退出       " />
         </View>
       </View>
     );

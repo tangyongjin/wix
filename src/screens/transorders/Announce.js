@@ -63,7 +63,9 @@ class Announce extends React.Component {
 
  _onPressSave = () => {
 
-};
+  console.log(ConfigStore)
+
+}
 
  
  render() {

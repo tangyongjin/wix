@@ -17,6 +17,7 @@ import * as AppConstClass from '../../config/constants';
 import Profile  from '../profile/Profile';
 import  {  StoreInit } from '../../mobx/StoreOp'
 
+import {before_login ,after_login } from  '../auth/Route' 
 
 const ACCESS_TOKEN = AppConstClass.ACCESS_TOKEN;
 
@@ -41,18 +42,7 @@ class Login extends Component {
     this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent.bind(this));
   }
 
-
-
-  componentWillMount() {
-       
-  }
-   
-   componentDidMount() {
-        
-         
-  }
-
-
+ 
 
 
   onNavigatorEvent(event) {
@@ -113,16 +103,8 @@ class Login extends Component {
           if(retcode ==0 ){
               let accessToken = res.access_token;
               this.storeToken(accessToken);
-
               StoreInit(res);
-
-              this.props.navigator.pop({
-                 animated: true, // does the pop have transition animation or does it happen immediately (optional)
-                 animationType: 'fade', // 'fade' (for both) / 'slide-horizontal' (for android) does the pop have different transition animation (optional)
-              });
-
-
- 
+              after_login()
           }
            
       } else {
