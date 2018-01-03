@@ -21,6 +21,7 @@
     "react-native-animatable": "^1.1.0",
     "react-native-background-timer": "^2.0.0",
     "react-native-camera": "^0.12.0",
+    "react-native-datepicker": "^1.6.0",
     "react-native-elements": "^0.18.5",
     "react-native-navigation": "latest",
     "react-native-sound": "^0.10.4",
