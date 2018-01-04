@@ -10,10 +10,14 @@ import   {
   View
 } from 'react-native';
 
+
+
 import {Navigation} from 'react-native-navigation';
 import * as AppConstClass from '../../config/constants';
 
 import {before_login ,after_login } from  '../auth/Route' 
+import  {  StoreInit ,StoreRefresh } from '../../mobx/StoreOp'
+
 
 const ACCESS_TOKEN = AppConstClass.ACCESS_TOKEN;
 
@@ -52,6 +56,18 @@ class Profile extends React.Component {
 restartApp(){
   before_login()
 }
+
+
+refreshAPI(){
+  
+
+  console.log(API_ROOT)
+  console.log(ConfigStore.access_token)
+  console.log(ConfigStore)
+  
+  StoreRefresh( API_ROOT,  ConfigStore.access_token);
+
+}
     
 
 render() {
@@ -59,7 +75,11 @@ render() {
        <View style={styles.container}>
         <Text style={styles.title}>Profile </Text>
         <View style={styles.button}>
+  
+          <Button onPress= { this.refreshAPI.bind(this) }   title="        Refresh       " />
+        
           <Button onPress= { this.restartApp.bind(this) }   title="        退出       " />
+        
         </View>
       </View>
     );

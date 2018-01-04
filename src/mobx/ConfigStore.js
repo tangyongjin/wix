@@ -8,15 +8,11 @@ class sysstroe {
      this.Configs[item]=value
   }
 
-   @observable foo: string;
-
-    setFoo() {
-        this.foo = 'test';
-    }
-
-   setFoo2(v) {
-        this.foo = v;
-    }
+ 
+  @observable  access_token=''
+  @action setToken(token) {
+     this.access_token = token
+  }
 
 
   @action setItem(item, value) {

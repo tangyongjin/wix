@@ -104,7 +104,7 @@ async saveAnnounce(){
 
         <View style={styles.inputWrap}>
          <FormInput  inputStyle={styles.inputcvv}  underlineColorAndroid="#100F0E"   selectionColor="rgba(0,0,0,0.4)"   
-         onChangeText={ (text)=> this.onSingleItem(text,'planno') } />
+         onChangeText={ (text)=> this.onSingleItem(text,'orderno') } />
         </View>
       </View>
 
@@ -123,7 +123,7 @@ async saveAnnounce(){
        <View style={styles.row}>
         <FormLabel  labelStyle={styles.FormLabel}   >收货地点</FormLabel>
        <TouchableWithoutFeedback style={styles.fullWidthButton} 
-         onPress={() => this.onPopPressed({dskey:'destlist',dbfield:'destname',field_text:'dest_text',field_id:'dest_id'})}
+         onPress={() => this.onPopPressed({dskey:'destlist',dbfield:'locname',field_text:'dest_text',field_id:'descloc'})}
 
          underlayStyle={{style:'white'}}>
          <View  style={{ backgroundColor:"#F5F5F5",paddingTop:15,  borderColor: 'black', borderBottomWidth:1,height:40,marginLeft:20, width:225  }} >
@@ -159,7 +159,7 @@ async saveAnnounce(){
         <FormLabel  labelStyle={styles.FormLabel}   >发车时间</FormLabel>
          <DatePicker
         style={{width: 255}}
-        date={AnnounceStore.announceDS.delver_datetime}
+        date={AnnounceStore.announceDS.cttime}
         mode="date"
         placeholder="select date"
         format="YYYY-MM-DD"
@@ -182,7 +182,7 @@ async saveAnnounce(){
           }
           // ... You can check the source to find the other keys.
         }}
-        onDateChange={(date) => { this.onSingleItem(date,'delver_datetime')  }}
+        onDateChange={(date) => { this.onSingleItem(date,'cttime')  }}
       />
             
             
@@ -209,7 +209,7 @@ async saveAnnounce(){
         <FormLabel  labelStyle={styles.FormLabel}   >需要车辆数</FormLabel>
         <View style={styles.inputWrap}>
          <FormInput  inputStyle={styles.inputcvv}  underlineColorAndroid="#100F0E"   selectionColor="rgba(0,0,0,0.4)"   
-         onChangeText={ (text)=> this.onSingleItem(text,'carnum_need')} />
+         onChangeText={ (text)=> this.onSingleItem(text,'cars_need')} />
         </View>
 
        </View>

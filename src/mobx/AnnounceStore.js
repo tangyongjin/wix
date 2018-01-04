@@ -6,12 +6,12 @@ class AnnounceStore {
 constructor(){
     // this.runflag="runned"
 }
-//   planno:'',
+//   orderno:'',
 //   // 发货地点
 //   src_id:'',
 //   src_text:'',
 //   // 收货地点
-//   dest_id:'',
+//   descloc:'',
 //   dest_text:'',
 // // 货品名称
 //   goods_id:'',
@@ -19,29 +19,29 @@ constructor(){
 // //单价
 //   price:'',
 // //发车时间
-//   delver_datetime=null;
+//   cttime=null;
 // //联系电话
 //   contact_mobile:'',
 // //需要车型
 //   cartype_id:'',
 //   cartype_text:'',
 // //需要车辆数
-//   carnum_need=0
+//   cars_need=0
 
   @observable announceDS ={
-      planno:'',
+      orderno:'',
       src_id:'',
       src_text:'',
-      dest_id:'',
+      descloc:'',
       dest_text:'',
       goods_id:'',
       goods_text:'',
       price:'',
-      delver_datetime:null,
+      cttime:null,
       contact_mobile:'',
       cartype_id:'',
       cartype_text:'',
-      carnum_need:0
+      cars_need:0
   }
 
   
