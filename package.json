@@ -12,13 +12,12 @@
     "e2e-release": "detox test --configuration ios.sim.release"
   },
   "dependencies": {
-    "jcore-react-native": "^1.2.2",
-    "jpush-react-native": "^2.1.6",
+    "jcore-react-native": "^1.2.9",
+    "jpush-react-native": "^2.2.9",
     "mobx": "^3.4.1",
     "mobx-react": "^4.3.5",
     "react": "16.0.0",
     "react-native": "0.51.0",
-    "react-native-alert": "github:pilipa-cn/react-native-alert",
     "react-native-animatable": "^1.1.0",
     "react-native-background-timer": "^2.0.0",
     "react-native-camera": "^0.12.0",

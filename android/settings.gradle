@@ -1,9 +1,27 @@
 
+include ':react-native-webrtc'
+project(':react-native-webrtc').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-webrtc/android')
+include ':react-native-alert'
+project(':react-native-alert').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-alert/android')
+include ':react-native-webrtc'
+project(':react-native-webrtc').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-webrtc/android')
+include ':react-native-alert'
+project(':react-native-alert').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-alert/android')
+include ':react-native-webrtc'
+project(':react-native-webrtc').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-webrtc/android')
+include ':react-native-alert'
+project(':react-native-alert').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-alert/android')
 
 
 
 
 rootProject.name = 'example'
+include ':jcore-react-native'
+project(':jcore-react-native').projectDir = new File(rootProject.projectDir, '../node_modules/jcore-react-native/android')
+
+include ':jpush-react-native'
+project(':jpush-react-native').projectDir = new File(rootProject.projectDir, '../node_modules/jpush-react-native/android')
+
 
 
 
@@ -36,9 +54,19 @@ project(':jpush-react-native').projectDir = new File(rootProject.projectDir, '..
 project(':jcore-react-native').projectDir = new File(rootProject.projectDir, '../node_modules/jcore-react-native/android')
 
 
+include ':WebRTCModule', ':app'
+project(':WebRTCModule').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-webrtc/android')
+
+
 
 include ':app'
 include ':react-native-navigation'
 project(':react-native-navigation').projectDir = new File(
         rootProject.projectDir, '../node_modules/react-native-navigation/android/app/')
+
+
+
+
+
+
 

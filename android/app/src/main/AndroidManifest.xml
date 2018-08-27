@@ -53,6 +53,25 @@
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
 
 
+
+
+
+
+
+
+
+
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    
+
+
+
+
+
+
+
     <application
         android:name=".MainApplication"
         android:allowBackup="false"
@@ -67,6 +86,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+    <meta-data
+        android:name="JPUSH_APPKEY"
+        android:value="${JPUSH_APPKEY}" />
+    <meta-data
+        android:name="JPUSH_CHANNEL"
+        android:value="${APP_CHANNEL}" />
+
 
 
 
